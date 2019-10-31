@@ -20,13 +20,13 @@ public class MarginalTax implements ICalculate {
 		// 22%
 		if (status == status.SINGLE && year == 2019 && salary > 39_475 && salary <= 84_200) {
 			float salaryDifference = salary - 39_475;
-			taxPaid = 970f + 3_753.00f + salaryDifference * .22f;
+			taxPaid = 970f + 3_573.00f + salaryDifference * .22f;
 		}
 		
 		// 24%
 		if (status == status.SINGLE && year == 2019 && salary > 84_200 && salary <= 160_725) {
 			float salaryDifference = salary - 84_200;
-			taxPaid = 970f + 3_753.00f + 9_839.50f + salaryDifference * .24f;
+			taxPaid = 970f + 3_573.00f + 9_839.50f + salaryDifference * .24f;
 		}
 		
 		
