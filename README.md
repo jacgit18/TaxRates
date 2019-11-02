@@ -1,2 +1,2 @@
 # TaxRates
-Just proessing income
+Just processing income
