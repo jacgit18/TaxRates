@@ -51,7 +51,38 @@ class TestSingle {
 		assertTrue(status, "30_174.50 was expected wrong values" + taxPaid);// assert produce junit report
 	}
 	
+	@Test
+	@DisplayName("Test for single people 200,000")
+	void test5() {
+		
+		ICalculate tax = new MarginalTax();
+		float taxPaid = tax.getTaxRate(Status.SINGLE, 2019, 200_000);
+		boolean status = taxPaid == 45_316.50;
+		
+		assertTrue(status, "45_316.50 was expected wrong value" + taxPaid);
+	}
 	
+	@Test
+	@DisplayName("Test for single people 300,000")
+	void test6() {
+		
+		ICalculate tax = new MarginalTax();
+		float taxPaid = tax.getTaxRate(Status.SINGLE, 2019, 300_000);
+		boolean status = taxPaid == 80_193.50;
+		
+		assertTrue(status, "80_193.50 was expected wrong value" + taxPaid);
+	}
+	
+	@Test
+	@DisplayName("Test for single people 600,000")
+	void test7() {
+		
+		ICalculate tax = new MarginalTax();
+		float taxPaid = tax.getTaxRate(Status.SINGLE, 2019, 600_000);
+		boolean status = taxPaid == 186_987.50;
+		
+		assertTrue(status, "186_987.50 was expected wrong value" + taxPaid);
+	}
 
 
 }
