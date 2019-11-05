@@ -12,7 +12,7 @@ import gov.irs.marignal.taxrate.Status;
 class TestHead_of_House_Hold {
 
 	@Test
-	@DisplayName("test for single people 900k") // generates name for test name isjunit report
+	@DisplayName("test for people who are head of house hold making 900k") // generates name for test name is junit report
 	void test() {
 
 		ICalculate tax = new MarginalTax();
@@ -22,7 +22,7 @@ class TestHead_of_House_Hold {
 	}
 	
 	@Test
-	@DisplayName("test for single people 1000k") // generates name for test name isjunit report
+	@DisplayName("test for single people who are head of house hold making 1000k") // generates name for test name is junit report
 	void test2() {
 
 		ICalculate tax = new MarginalTax();
@@ -32,7 +32,7 @@ class TestHead_of_House_Hold {
 	}
 	
 	@Test
-	@DisplayName("test for single people 10") // generates name for test name isjunit report
+	@DisplayName("test for single people who are head of house hold making 10") // generates name for test name is junit report
 	void test3() {
 
 		ICalculate tax = new MarginalTax();
@@ -42,7 +42,7 @@ class TestHead_of_House_Hold {
 	}
 	
 	@Test
-	@DisplayName("test for single people 150,000") // generates name for test name isjunit report
+	@DisplayName("test for single people who are head of house hold making 150,000") // generates name for test name is junit report
 	void test4() {
 
 		ICalculate tax = new MarginalTax();

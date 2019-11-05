@@ -29,6 +29,11 @@ public class MarginalTax implements ICalculate {
 			taxPaid = 970f + 3_573.00f + 9_839.50f + salaryDifference * .24f;
 		}
 		
+		else if (status == status.MARRIED && year == 2019 && salary <= 9700){
+			taxPaid = salary * .10f;
+
+		}
+		
 		
 		return taxPaid;
 	}
