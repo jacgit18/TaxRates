@@ -13,7 +13,7 @@ public class MarginalTax implements ICalculate {
 //        		    3, 1, 2, 5, 4,
 //        		    3, 1, 2, 5, 4
 //        
-//        
+        
 //        }; 
 //        float taxRateTenPercent = .10f;
 //        float taxRateTwelevePercent = .12f;
