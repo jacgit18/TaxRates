@@ -8,16 +8,33 @@ public class MarginalTax implements ICalculate {
 	@Override
 	public float getTaxRate(Status status, int year, float salary) {
 		float taxPaid = 0f;
+
+        int arr[] ={3, 1, 2, 5, 4,
+        		    3, 1, 2, 5, 4,
+        		    3, 1, 2, 5, 4
+        
+        
+        }; 
+        float taxRateTenPercent = .10f;
+        float taxRateTwelevePercent = .12f;
+        float taxRateTwentyTwoPercent = .22f;
+        float taxRateTwentyFourPercent = .24f;
+        float taxRateThirtyTwoPercent = .32f;
+        float taxRateThirtyFivePercent = .35f;
+        float taxRateThirtySevenPercent = .37f;
+
+        
+        
 		if (status == Status.SINGLE && year == 2019 && salary <= 9700) {
 
-			taxPaid = salary * .10f;
+			taxPaid = salary * taxRateTenPercent;
 
 		}
 
 		if (status == Status.SINGLE && year == 2019 && salary > 9700 && salary <= 39_475) {
 
 			float salaryDifference = salary - 9_700;
-			taxPaid = 970f + (salaryDifference * .12f);
+			taxPaid = 970f + (salaryDifference * taxRateTwelevePercent);
 
 		}
 
@@ -26,7 +43,7 @@ public class MarginalTax implements ICalculate {
 		if (status == Status.SINGLE && year == 2019 && salary > 39_475 && salary <= 84_200) {
 
 			float salaryDifference = salary - 39_475;
-			taxPaid = 3_573.00f + 970f + (salaryDifference * .22f);
+			taxPaid = 3_573.00f + 970f + (salaryDifference * taxRateTwentyTwoPercent);
 
 		}
 
@@ -35,7 +52,7 @@ public class MarginalTax implements ICalculate {
 		if (status == Status.SINGLE && year == 2019 && salary > 84_200 && salary <= 160_725) {
 
 			float salaryDifference = salary - 84_200;
-			taxPaid = 9_839.50f + 3_573.00f + 970f + (salaryDifference * .24f);
+			taxPaid = 9_839.50f + 3_573.00f + 970f + (salaryDifference * taxRateTwentyFourPercent);
 
 		}
 
@@ -44,7 +61,7 @@ public class MarginalTax implements ICalculate {
 		if (status == Status.SINGLE && year == 2019 && salary > 160_725 && salary <= 204_100) {
 
 			float salaryDifference = salary - 160_725;
-			taxPaid = 18_366.00f + 9_839.50f + 3_573.00f + 970f + (salaryDifference * .32f);
+			taxPaid = 18_366.00f + 9_839.50f + 3_573.00f + 970f + (salaryDifference * taxRateThirtyTwoPercent);
 
 		}
 
@@ -53,7 +70,7 @@ public class MarginalTax implements ICalculate {
 		if (status == Status.SINGLE && year == 2019 && salary > 204_100 && salary <= 510_300) {
 
 			float salaryDifference = salary - 204_100;
-			taxPaid = 13_880.00f + 18_366.00f + 9_839.50f + 3_573.00f + 970f + (salaryDifference * .35f);
+			taxPaid = 13_880.00f + 18_366.00f + 9_839.50f + 3_573.00f + 970f + (salaryDifference * taxRateThirtyFivePercent);
 
 		}
 
@@ -62,7 +79,7 @@ public class MarginalTax implements ICalculate {
 		if (status == Status.SINGLE && year == 2019 && salary > 510_300) {
 
 			float salaryDifference = salary - 510_300;
-			taxPaid = 107_170.00f + 13_880.00f + 18_366.00f + 9_839.50f + 3_573.00f + 970f + (salaryDifference * .37f);
+			taxPaid = 107_170.00f + 13_880.00f + 18_366.00f + 9_839.50f + 3_573.00f + 970f + (salaryDifference * taxRateThirtySevenPercent);
 
 		}
 
