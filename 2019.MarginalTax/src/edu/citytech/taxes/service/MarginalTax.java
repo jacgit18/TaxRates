@@ -2,21 +2,74 @@ package edu.citytech.taxes.service;
 
 import gov.irs.marignal.taxrate.ICalculate;
 import gov.irs.marignal.taxrate.Status;
+import static gov.irs.marignal.taxrate.Status.SINGLE;
+
+import java.util.Arrays;
+
+import static gov.irs.marignal.taxrate.Status.MARRIED;
+import static gov.irs.marignal.taxrate.Status.HEAD_OF_HOUSE_HOLD;
 
 public class MarginalTax implements ICalculate {
 
 	@Override
 	public float getTaxRate(Status status, int year, float salary) {
 		float taxPaid = 0f;
+		float rate = 0, r1 = 0 ,r2 = 0;
 
+		TaxRate[] taxRateForAll = {
+				  new TaxRate(rate = .10f, r1 = 9_700, r2 = 0, SINGLE)
+				  ,new TaxRate(rate = .12f, r1 = 39475, r2 = 9700, SINGLE)
+				  ,new TaxRate(rate = .22f, r1 = 84200, r2 = 39475, SINGLE)
+				  ,new TaxRate(rate = .24f, r1 = 160725, r2 = 84200, SINGLE)
+				  ,new TaxRate(rate = .32f, r1 = 204100, r2 = 160725, SINGLE)
+				  ,new TaxRate(rate = .35f, r1 = 510300, r2 = 204100, SINGLE)
+				  ,new TaxRate(rate = .37f, r1 = 999999999, r2 = 510300, SINGLE)
+				  
+				  ,new TaxRate(rate = .10f, r1 = 19400, r2 = 0, MARRIED)
+				  ,new TaxRate(rate = .12f, r1 = 78950, r2 = 19400, MARRIED)
+				  ,new TaxRate(rate = .22f, r1 = 168400, r2 = 78950, MARRIED)
+				  ,new TaxRate(rate = .24f, r1 = 321450, r2 = 168400, MARRIED)
+				  ,new TaxRate(rate = .32f, r1 = 408200, r2 = 321450, MARRIED)
+				  ,new TaxRate(rate = .35f, r1 = 612350, r2 = 408200, MARRIED)
+				  ,new TaxRate(rate = .37f, r1 = 999999999, r2 = 612350, MARRIED)
 
+				  ,new TaxRate(rate = .10f, r1 = 13850, r2 = 0, HEAD_OF_HOUSE_HOLD)
+				  ,new TaxRate(rate = .12f, r1 = 52850, r2 = 13850, HEAD_OF_HOUSE_HOLD)
+				  ,new TaxRate(rate = .22f, r1 = 84200, r2 = 52850, HEAD_OF_HOUSE_HOLD)
+				  ,new TaxRate(rate = .24f, r1 = 160000, r2 = 84200, HEAD_OF_HOUSE_HOLD)
+				  ,new TaxRate(rate = .32f, r1 = 204100, r2 = 160000, HEAD_OF_HOUSE_HOLD)
+				  ,new TaxRate(rate = .35f, r1 = 510300, r2 = 204100, HEAD_OF_HOUSE_HOLD)
+				  ,new TaxRate(rate = .37f, r1 = 999999999, r2 = 510300, HEAD_OF_HOUSE_HOLD)
+				  
+		};
+		
+//		salary = 150_000;
+		  int i = 0;
+
+		  TaxRate [] taxRate = Arrays.stream(taxRateForAll)
+				  .filter(m -> m.status == status.SINGLE)
+				  .toArray(TaxRate[]::new);
         
-        
-		if (status == Status.SINGLE && year == 2019 && salary <= 9700) {
+		  
+//		  while(salary > taxRate[i].r1){
+			  if (status == Status.SINGLE && year == 2019 && salary <= taxRate[i].r1) {
 
-			taxPaid = salary * .10f;
+					taxPaid = salary * .10f;
+					
+//				      taxPaid = (taxRate[i].r1 - taxRate[i].r2) * taxRate[i].rate;
+//				      taxRate[i].taxPaid = taxPaid;
+//				      System.out.println(taxRate[i]);
+//				    i++;
 
-		}
+//				}
+			  }
+		  
+		  
+//		if (status == Status.SINGLE && year == 2019 && salary <= r1) {
+//
+//			taxPaid = salary * .10f;
+//
+//		}
 
 		if (status == Status.SINGLE && year == 2019 && salary > 9700 && salary <= 39_475) {
 

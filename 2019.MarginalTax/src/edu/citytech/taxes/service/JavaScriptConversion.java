@@ -7,7 +7,7 @@ import static gov.irs.marignal.taxrate.Status.HEAD_OF_HOUSE_HOLD;
 
 import java.util.Arrays;
 
-import gov.irs.marignal.taxrate.Status;;
+import gov.irs.marignal.taxrate.Status;
 
 public class JavaScriptConversion {
 
@@ -59,15 +59,15 @@ public class JavaScriptConversion {
 
 		
 		  while(salary > taxRate[i].r1){
-			  float  taxPaid = (taxRate[i].r1 - taxRate[i].r2) * taxRate[i].rate;
+			  float taxPaid = (taxRate[i].r1 - taxRate[i].r2) * taxRate[i].rate;
 			      taxRate[i].taxPaid = taxPaid;
 			      System.out.println(taxRate[i]);
 			    i++;
 			  }
 		
 		  
-		  
-		float  taxPaid = (salary - taxRate[i].r2) * taxRate[i].rate;
+		  // what happened hear 
+		float taxPaid = (salary - taxRate[i].r2) * taxRate[i].rate;
 
 		  taxRate[i].taxPaid = taxPaid;
 
