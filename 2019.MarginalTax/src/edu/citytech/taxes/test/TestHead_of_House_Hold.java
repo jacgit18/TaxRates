@@ -13,7 +13,7 @@ class TestHead_of_House_Hold {
 
 
 	@Test
-	@DisplayName("Test for HOH people 1MIL")
+	@DisplayName("Test for Head of HouseHold people 1 Milllion")
 	void test() {
 		
 		ICalculate tax = new MarginalTax();

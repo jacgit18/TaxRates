@@ -34,7 +34,7 @@ class TestMarried {
 	}
 	
 	@Test
-	@DisplayName("Test for married people 1mil")
+	@DisplayName("Test for married people 1 Million")
 	void test3() {
 		
 		ICalculate tax = new MarginalTax();
