@@ -4,7 +4,6 @@ import static gov.irs.marignal.taxrate.Status.SINGLE;
 import static gov.irs.marignal.taxrate.Status.MARRIED;
 import static gov.irs.marignal.taxrate.Status.HEAD_OF_HOUSE_HOLD;
 
-
 import java.util.Arrays;
 
 import gov.irs.marignal.taxrate.Status;
@@ -13,9 +12,8 @@ public class JavaScriptConversion {
 
 	public static void main(String[] args) {
 		// apply this code to marginal tax to were it is reusable and passes junit test
-		float rate = 0, r1 = 0 ,r2 = 0;
-		
-//
+		float rate = 0, r1 = 0, r2 = 0;
+
 //		TaxRate[] taxRateForAll = {
 //				  new TaxRate(rate = .10f, r1 = 9700, r2 = 0, SINGLE)
 //				  ,new TaxRate(rate = .12f, r1 = 39475, r2 = 9700, SINGLE)
@@ -44,20 +42,17 @@ public class JavaScriptConversion {
 //				  ,new TaxRate(rate = .37f, r1 = 999999999, r2 = 510300, HEAD_OF_HOUSE_HOLD)
 //				  
 //				  
+//
+//		};
 
-		};
-		
-		
-
-		  float salary = 150000; // dont  include in main code
-		  int i = 0;
-		  Status status = SINGLE;// dont  include in main code
+		float salary = 150000; // dont include in main code
+		int i = 0;
+		Status status = SINGLE;// dont include in main code
 
 //		  TaxRate [] taxRate = Arrays.stream(taxRateForAll)
 //									  .filter(m -> m.status == status)
 //									  .toArray(TaxRate[]::new);
-//
-//		
+
 //		  while(salary > taxRate[i].r1){
 //			  float taxPaid = (taxRate[i].r1 - taxRate[i].r2) * taxRate[i].rate;
 //			      taxRate[i].taxPaid = taxPaid;
@@ -77,11 +72,9 @@ public class JavaScriptConversion {
 //		                      .mapToDouble(m -> m.taxPaid)
 //		                      .sum();
 //		                      
-//		
-//
+
 //		  System.out.println("Total Paid: " + totalPaid);
-	
 
-
+	}
 
 }
